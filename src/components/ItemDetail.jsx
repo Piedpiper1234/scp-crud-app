@@ -26,21 +26,26 @@ function ItemDetail() {
   }, [id]);
 
   return (
-    <div>
-      {
-        itemData ? (
-          <>
-            <h1>{itemData.item}</h1>
-            <h2>{itemData.class}</h2>
-            <h3>Description</h3>
-            <p>{itemData.description}</p>
-            <h3>Containment</h3>
-            <p>{itemData.containment}</p>
-          </>
-        ) : (
-          <p>Loading...</p>
-        )
-      }
+    <div className="content-card">
+      {itemData && (
+        <>
+          <h1>{itemData.item}</h1>
+          {itemData.image && (
+  <img
+    src={itemData.image}
+    alt={itemData.item}
+    className="scp-image"
+  />
+)}
+          <h2>{itemData.class}</h2>
+
+          <h3>Description</h3>
+          <p>{itemData.description}</p>
+
+          <h3>Containment</h3>
+          <p>{itemData.containment}</p>
+        </>
+      )}
     </div>
   );
 }
