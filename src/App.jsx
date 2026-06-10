@@ -14,7 +14,9 @@ function App() {
           path="/"
           element={
             <div className="home-page">
-              <h1>Welcome to the SCP CRUD Application</h1>
+              <h1 className="title">
+                SCP Foundation Database
+              </h1>
 
               <img
                 src="/images/Home_pic.png"
@@ -22,10 +24,11 @@ function App() {
                 className="home-image"
               />
 
-              <p className="home-text">
-                Browse SCP records, view containment procedures, and manage
-                entries through the Admin Panel.
-              </p>
+                <p className="subtitle">
+                  Secure. Contain. Protect.
+                  <br />
+                  Browse SCP records, review containment procedures, and manage Foundation database entries.
+                </p>
             </div>
           }
         />

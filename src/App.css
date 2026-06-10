@@ -1,18 +1,22 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.home-image {
-  width: 70%;
-  max-width: 800px;
-  margin-top: 20px;
-  border-radius: 10px;
+
+body {
+  background: #0f172a;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 p {
   line-height: 1.8;
   color: #d1d5db;
+}
+
+h1 {
+  color: white;
 }
 
 h3 {
@@ -20,55 +24,46 @@ h3 {
   margin-bottom: 10px;
   color: #38bdf8;
 }
-body {
-  background: #0f172a;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.app {
-  min-height: 100vh;
-}
 
 /* NAVBAR */
 .navbar {
   width: 100%;
   background: #111827;
-  padding: 20px;
+  padding: 14px 20px;
   border-bottom: 1px solid #374151;
+  overflow-x: auto;
 }
-h1 {
-  color: white;
-}
-.content-card {
-  max-width: 900px;
-  margin: 40px auto;
-  background: #111827;
-  padding: 40px;
-  border-radius: 20px;
-  border: 1px solid #374151;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
+
 .nav-links {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  align-items: center;
+  gap: 10px;
   list-style: none;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
   color: #cbd5e1;
   text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
-}
-.nav-links a {
-  transition: 0.3s;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.25s ease;
   display: inline-block;
+  white-space: nowrap;
+  padding: 8px 10px;
+  border-radius: 6px;
 }
+
 .nav-links a:hover {
-  color: #38bdf8;
+  color: white;
+  background: #1e293b;
   transform: translateY(-2px);
+}
+
+.nav-links a:focus {
+  outline: 2px solid #38bdf8;
+  color: white;
 }
 
 /* MAIN CONTENT */
@@ -80,14 +75,47 @@ h1 {
 }
 
 .title {
-  font-size: 60px;
-  margin-bottom: 20px;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px rgba(56, 189, 248, 0.6),
+    0 0 20px rgba(56, 189, 248, 0.4);
+  margin-bottom: 25px;
+  line-height: 1.1;
 }
 
 .subtitle {
   color: #94a3b8;
   font-size: 20px;
   margin-bottom: 40px;
+}
+
+.content-card {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #111827;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #374151;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* HOME PAGE */
+.home-page {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.home-image {
+  width: 70%;
+  max-width: 800px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.18);
 }
 
 /* CARD STYLE */
@@ -106,6 +134,7 @@ h1 {
   border-color: #38bdf8;
 }
 
+/* GENERAL BUTTONS */
 button {
   background: #38bdf8;
   color: white;
@@ -119,4 +148,118 @@ button {
 
 button:hover {
   background: #0ea5e9;
+}
+
+/* ADMIN PANEL */
+.admin-panel {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.admin-panel h2 {
+  text-align: center;
+  color: #38bdf8;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.admin-list {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.admin-card {
+  background: #1b1b1b;
+  border: 1px solid #2f3f5f;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(46, 168, 255, 0.12);
+}
+
+.admin-card h3 {
+  color: #38bdf8;
+  margin-top: 0;
+}
+
+.admin-preview {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 12px auto;
+}
+
+.admin-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 20px;
+}
+
+.admin-buttons button {
+  min-width: 115px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-buttons button:first-child {
+  background: #2ea8ff;
+  color: white;
+}
+
+.admin-buttons button:first-child:hover {
+  background: #1f8de0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(46, 168, 255, 0.45);
+}
+
+.admin-buttons button:last-child {
+  background: #c0392b;
+  color: white;
+}
+
+.admin-buttons button:last-child:hover {
+  background: #a93226;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(192, 57, 43, 0.45);
+}
+
+/* ADMIN FORM */
+.admin-panel input,
+.admin-panel textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: #111827;
+  color: white;
+  box-sizing: border-box;
+}
+
+.admin-panel textarea {
+  min-height: 90px;
+}
+
+.add-record {
+  background: #1b1b1b;
+  border: 1px solid #2f3f5f;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 0 12px rgba(46, 168, 255, 0.12);
+}
+
+.add-record h3 {
+  text-align: center;
+  color: #38bdf8;
+  margin-top: 0;
 }

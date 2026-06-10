@@ -3,20 +3,19 @@ import { Link } from 'react-router-dom';
 import { supabase } from '../supabase';
 
 function NavMenu() {
-
-  const [item, setItem] = useState([]);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     const fetchItems = async () => {
       const { data, error } = await supabase
-  .from('scp')
-  .select('id, item')
-  .order('id', { ascending: true });
+        .from('scp')
+        .select('*')
+        .order('item', { ascending: true });
 
       if (error) {
         console.error(error);
       } else {
-        setItem(data);
+        setItems(data);
       }
     };
 
@@ -24,29 +23,28 @@ function NavMenu() {
   }, []);
 
   return (
-  <nav className="navbar">
-    <ul className="nav-links">   
-      <li>
-         <Link to="/">Home</Link>
-      </li>
+    <nav className="navbar">
+      <ul className="nav-links">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
 
-  
-      {item.map((items) => (
-        <li key={items.id}>
-          <Link to={`/item/${items.id}`}>
-            {items.item}
+        {items.map((item) => (
+          <li key={item.id}>
+            <Link to={`/item/${item.id}`}>
+              {item.item}
+            </Link>
+          </li>
+        ))}
+
+        <li>
+          <Link to="/admin">
+            Admin Panel
           </Link>
         </li>
-      ))}
-
-      <li>
-        <Link to="/admin">
-          Admin Panel
-        </Link>
-      </li>
-    </ul>
-  </nav>
-);
+      </ul>
+    </nav>
+  );
 }
 
 export default NavMenu;
